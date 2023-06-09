@@ -1,6 +1,14 @@
 #include <stdio.h>
 int main() {
-   // printf() displays the string inside quotation
-   printf("Hello, World!\n");
-   return 0;
+   FILE* file = fopen("filename.txt", "r");
+    if (file == NULL) {
+        printf("Could not open the file.\n");
+        return 1;
+    }
+
+    char line[100];
+    while (fgets(line, sizeof(line), file) != NULL) {
+        printf("%s", line);  // Print the read line
+    }
+    return 0;
 }
