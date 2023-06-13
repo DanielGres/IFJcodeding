@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include "lexical.h"
+
 int main() {
    FILE* file = fopen("filename.txt", "r");
     if (file == NULL) {
